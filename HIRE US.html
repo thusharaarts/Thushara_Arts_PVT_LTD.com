@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8CKLXPX20B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8CKLXPX20B');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire Us | Thushara Arts & Advertising</title>
+    <link rel="icon" type="image/x-icon" href="assets/WhatsApp Image 2026-05-11 at 5.12.49 PM.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #030303; 
+            color: #ffffff; 
+            overflow-x: hidden;
+        }
+        .font-spartan { font-family: 'League Spartan', sans-serif; }
+        
+        .bg-artwork {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('assets/portrait-fantasy-sea-creature.png');
+            background-size: cover;
+            background-position: center;
+            filter: blur(0px) brightness(25%);
+            z-index: -2;
+        }
+
+        .glass-input {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 14px 18px;
+            color: white;
+            outline: none;
+            transition: all 0.4s ease;
+            width: 100%;
+        }
+        .glass-input:focus {
+            border-color: #007aff;
+            background: rgba(0, 122, 255, 0.05);
+            box-shadow: 0 0 15px rgba(0, 122, 255, 0.2);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 2.5rem;
+        }
+
+        .btn-glow {
+            background: #007aff;
+            box-shadow: 0 10px 20px rgba(0, 122, 255, 0.3);
+            transition: all 0.4s ease;
+        }
+        .btn-glow:hover {
+            background: #ffffff;
+            color: #000000;
+            box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        label {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #71717a;
+            margin-bottom: 8px;
+            display: block;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="bg-artwork"></div>
+
+    <nav class="max-w-7xl mx-auto px-8 py-10 flex justify-between items-center">
+        <a href="index.html" class="text-[12px] font-black tracking-[0.5em] text-zinc-100 hover:text-white transition uppercase">
+            ← CANCEL & BACK
+        </a><br>
+        <img src="assets/IMG_5611.JPG2.png" alt="Logo" class="h-10 md:h-14">
+        <div class="w-10"></div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 pb-32">
+        
+        <div class="text-center mb-16">
+            <h2 class="text-blue-500 text-[11px] font-black tracking-[1em] uppercase mb-6">Booking & Consultations</h2>
+            <h1 class="font-spartan text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6">
+                HIRE OUR <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-white">EXPERT TEAM.</span>
+            </h1>
+            <p class="text-zinc-300 text-xs md:text-sm uppercase tracking-widest leading-relaxed">
+                FILL OUT THE FORM BELOW TO SECURE YOUR APPOINTMENT FOR DESIGN, PRINTING, OR VEHICLE MODIFICATION.
+            </p>
+        </div>
+
+        <div class="glass-card p-8 md:p-16">
+            <form id="appointmentForm" class="space-y-8">
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <label>Full Name / නම</label>
+                        <input type="text" id="name" placeholder="ENTER YOUR NAME" class="glass-input" required>
+                    </div>
+                    <div>
+                        <label>Contact Number / දුරකථන අංකය</label>
+                        <input type="tel" id="phone" placeholder="+94 XX XXX XXXX" class="glass-input" required>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <label>Select Service / අවශ්‍ය සේවාව</label>
+                        <select id="service" class="glass-input appearance-none bg-zinc-900" required>
+                            <option value="">CHOOSE A SERVICE</option>
+                            <option value="DIGITAL PRINTING & BANNERS">DIGITAL PRINTING & BANNERS</option>
+                            <option value="3D LIGHT BOARDS & SIGNAGE">3D LIGHT BOARDS & SIGNAGE</option>
+                            <option value="VEHICLE MODIFICATION & WRAPPING">VEHICLE MODIFICATION & WRAPPING</option>
+                            <option value="GRAPHIC DESIGN & LOGO">GRAPHIC DESIGN & LOGO</option>
+                            <option value="OTHER">OTHER CUSTOM PROJECT</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Email Address (Optional) / ඊමේල්</label>
+                        <input type="email" id="email" placeholder="EMAIL@EXAMPLE.COM" class="glass-input">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <label>Preferred Date / දිනය</label>
+                        <input type="date" id="date" class="glass-input" required>
+                    </div>
+                    <div>
+                        <label>Preferred Time / වේලාව</label>
+                        <input type="time" id="time" class="glass-input" required>
+                    </div>
+                </div>
+
+                <div>
+                    <label>Description / ඔබේ අවශ්‍යතාවය</label>
+                    <textarea id="description" rows="4" placeholder="TELL US ABOUT YOUR PROJECT REQUIREMENTS..." class="glass-input"></textarea>
+                </div>
+
+                <div class="pt-6">
+                    <button type="submit" class="btn-glow w-full py-5 rounded-full font-black text-[12px] tracking-[0.4em] uppercase">
+                        CONFIRM APPOINTMENT
+                    </button>
+                    <p class="text-center text-zinc-400 text-[9px] mt-6 tracking-widest uppercase">
+                        OUR TEAM WILL CONTACT YOU WITHIN 24 HOURS TO FINALIZE THE BOOKING.
+                    </p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="py-12 border-t border-white/5 text-center">
+        <img src="assets/IMG_5611.JPG2.png" alt="Logo" class="h-8 mx-auto mb-6 opacity-80">
+        <p class="text-zinc-100 text-[9px] font-black tracking-[0.6em] uppercase italic">Precision & Creativity by Thushara Arts (Pvt) Ltd</p>
+    </footer>
+
+    <script>
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const email = document.getElementById('email').value || 'N/A';
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const description = document.getElementById('description').value || 'No description provided';
+
+            // Construct WhatsApp Message
+            const whatsappNumber = "94752275176";
+            const message = `*NEW APPOINTMENT - THUSHARA ARTS*%0A%0A` +
+                            `*Name:* ${name}%0A` +
+                            `*Phone:* ${phone}%0A` +
+                            `*Service:* ${service}%0A` +
+                            `*Email:* ${email}%0A` +
+                            `*Date:* ${date}%0A` +
+                            `*Time:* ${time}%0A` +
+                            `*Description:* ${description}`;
+
+            // Redirect to WhatsApp
+            window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+        });
+    </script>
+
+</body>
+</html>
