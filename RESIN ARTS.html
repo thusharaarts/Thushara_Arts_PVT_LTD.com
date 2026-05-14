@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resin Artistry Elite | Thushara Arts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;900&family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #020205; color: #ffffff; }
+        .font-spartan { font-family: 'League Spartan', sans-serif; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+
+        html { scroll-behavior: smooth; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(40px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 4rem;
+        }
+
+        .img-zoom { overflow: hidden; border-radius: 3rem; cursor: pointer; position: relative; }
+        .img-zoom img { transition: transform 1.5s cubic-bezier(0.165, 0.84, 0.44, 1); width: 100%; height: 100%; object-fit: cover; }
+        .img-zoom:hover img { transform: scale(1.1); }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #3b82f6, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-padding { padding: 120px 24px; }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(15px);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .modal-content {
+            background: #0a0a0c;
+            border: 1px solid rgba(255,255,255,0.1);
+            max-width: 850px;
+            width: 100%;
+            border-radius: 3rem;
+            position: relative;
+            animation: modalFade 0.4s ease-out;
+            overflow: hidden;
+        }
+        @keyframes modalFade {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed top-0 w-full z-50 px-10 py-8 flex justify-between items-center mix-blend-difference">
+        <img src="https://storage.googleapis.com/gweb-unison-all-projects-and-assets/pwa_image_6f95c1a851cc11ef8469d12d99d1461b.png" alt="Logo" class="h-10">
+        <a href="index.html" class="text-[10px] font-black tracking-[0.5em] text-white uppercase hover:text-blue-500 transition">BACK</a>
+    </nav>
+
+    <header class="relative h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?q=80&w=2000" class="w-full h-full object-cover opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#020205]"></div>
+        </div>
+        
+        <div class="relative z-10 space-y-6">
+            <h2 class="text-blue-500 text-[11px] font-black tracking-[1.5em] uppercase animate-pulse">Luxury Liquid Glass</h2>
+            <h1 class="font-playfair text-6xl md:text-[12rem] leading-none italic gradient-text">Resin Art.</h1>
+            <p class="max-w-3xl mx-auto text-zinc-500 text-xs md:text-sm uppercase tracking-[0.4em] font-light">
+                Redefining spaces with fluid dynamics and crystal clear permanence.
+            </p>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="max-w-7xl mx-auto section-padding grid md:grid-cols-2 gap-24 items-center border-b border-white/5">
+            <div class="img-zoom h-[600px]" onclick="openModal('main_bouquet')">
+                <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=1000" alt="Flower Preservation">
+            </div>
+            <div class="space-y-10">
+                <div class="space-y-4">
+                    <h3 class="font-spartan text-4xl md:text-6xl font-black uppercase leading-tight">Eternal <br>Florals.</h3>
+                    <p class="text-blue-400 font-black text-xs tracking-widest uppercase">Wedding Bouquet Preservation • මංගල මල් මාල සංරක්ෂණය</p>
+                </div>
+                <p class="text-zinc-400 text-sm leading-relaxed uppercase tracking-wider">
+                    අපගේ විශේෂිත Resin තාක්ෂණය මගින් ඔබේ ජීවිතයේ වටිනාම දිනයේ මතකයන් සදාකාලිකව සුරැකිය හැක. සාමාන්‍යයෙන් මල් වියළී යන නමුත්, අපගේ UV Resistant Resin මගින් මල්වල ස්වභාවික පැහැය වසර ගණනාවක් නොවෙනස්ව තබා ගනී. 
+                </p>
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="glass-panel p-4 flex items-center gap-6 cursor-pointer hover:bg-white/5 transition" onclick="openModal('deep_casting')">
+                        <div class="h-20 w-20 rounded-2xl overflow-hidden flex-shrink-0 border border-white/10">
+                            <img src="https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?q=80&w=300" class="w-full h-full object-cover" alt="Deep Casting">
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="h-10 w-10 rounded-full bg-blue-600 flex items-center justify-center font-bold text-xs">01</div>
+                            <div>
+                                <h4 class="font-bold text-xs uppercase tracking-widest mb-1">Deep Casting</h4>
+                                <p class="text-[10px] text-zinc-500 uppercase">3D blocks for full bouquet preservation.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel p-4 flex items-center gap-6 cursor-pointer hover:bg-white/5 transition" onclick="openModal('floral_jewelry')">
+                        <div class="h-20 w-20 rounded-2xl overflow-hidden flex-shrink-0 border border-white/10">
+                            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=300" class="w-full h-full object-cover" alt="Floral Jewelry">
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="h-10 w-10 rounded-full bg-pink-600 flex items-center justify-center font-bold text-xs">02</div>
+                            <div>
+                                <h4 class="font-bold text-xs uppercase tracking-widest mb-1">Floral Jewelry</h4>
+                                <p class="text-[10px] text-zinc-500 uppercase">Small pieces of petals inside rings & pendants.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto section-padding">
+            <div class="text-center mb-24 space-y-6">
+                <h3 class="font-spartan text-5xl md:text-8xl font-black uppercase tracking-tighter">Bespoke <span class="text-blue-500">Living.</span></h3>
+                <p class="text-zinc-500 text-xs uppercase tracking-[0.5em]">High-End Furniture & Art</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-20">
+                <div class="space-y-6">
+                    <div class="img-zoom h-80" onclick="openModal('river_tables')">
+                        <img src="https://images.unsplash.com/photo-1581428982868-e410dd047a90?q=80&w=800">
+                    </div>
+                    <h4 class="font-black text-xl uppercase tracking-tighter">River Tables (රෙසින් මේස)</h4>
+                    <p class="text-zinc-500 text-[10px] uppercase leading-relaxed">Solid Teak combined with heavy-duty epoxy. Heat resistant and scratch-proof.</p>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="img-zoom h-80" onclick="openModal('clocks')">
+                        <img src="https://images.unsplash.com/photo-1590736962236-4074f767858c?q=80&w=800">
+                    </div>
+                    <h4 class="font-black text-xl uppercase tracking-tighter">Geode Clocks (ඔරලෝසු)</h4>
+                    <p class="text-zinc-500 text-[10px] uppercase leading-relaxed">24K gold leaf and semi-precious stones with silent quartz movement.</p>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="img-zoom h-80" onclick="openModal('ocean')">
+                        <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=800">
+                    </div>
+                    <h4 class="font-black text-xl uppercase tracking-tighter">Ocean Pour (මුහුදු රටා)</h4>
+                    <p class="text-zinc-500 text-[10px] uppercase leading-relaxed">Multi-layered resin to create realistic ocean depth and lacing effects.</p>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="img-zoom h-80" onclick="openModal('trays')">
+                        <img src="https://images.unsplash.com/photo-1610433554304-7ec394cc1393?q=80&w=800">
+                    </div>
+                    <h4 class="font-black text-xl uppercase tracking-tighter">Luxury Trays (බඳුන්)</h4>
+                    <p class="text-zinc-500 text-[10px] uppercase leading-relaxed">FDA-compliant food-safe serving trays with metallic marble effects.</p>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="img-zoom h-80" onclick="openModal('pyramids')">
+                        <img src="https://images.unsplash.com/photo-1635345716135-cc0a06654a93?q=80&w=800">
+                    </div>
+                    <h4 class="font-black text-xl uppercase tracking-tighter">Resin Pyramids (පිරමිඩ)</h4>
+                    <p class="text-zinc-500 text-[10px] uppercase leading-relaxed">Orgonite energy pyramids with copper shavings and crystal infusions.</p>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="img-zoom h-80" onclick="openModal('mirrors')">
+                        <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=800">
+                    </div>
+                    <h4 class="font-black text-xl uppercase tracking-tighter">Art Mirrors (කැඩපත්)</h4>
+                    <p class="text-zinc-500 text-[10px] uppercase leading-relaxed">Custom border resin art mirrors to elevate your home vanity space.</p>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="img-zoom h-80" onclick="openModal('cases')">
+                        <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?q=80&w=800">
+                    </div>
+                    <h4 class="font-black text-xl uppercase tracking-tighter">Phone Cases (කවර)</h4>
+                    <p class="text-zinc-500 text-[10px] uppercase leading-relaxed">Ultra-durable custom resin phone cases with preserved dried flowers.</p>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="img-zoom h-80" onclick="openModal('letters')">
+                        <img src="https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?q=80&w=800">
+                    </div>
+                    <h4 class="font-black text-xl uppercase tracking-tighter">Monogram Sets (අකුරු)</h4>
+                    <p class="text-zinc-500 text-[10px] uppercase leading-relaxed">Personalized 3D letter blocks for desk decor and keychain branding.</p>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="img-zoom h-80" onclick="openModal('keytags')">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=800">
+                    </div>
+                    <h4 class="font-black text-xl uppercase tracking-tighter">Key Tags (යතුරු රඳවනයන්)</h4>
+                    <p class="text-zinc-500 text-[10px] uppercase leading-relaxed">Crystal clear custom key tags with names, initials or gold flakes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-zinc-950 section-padding">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-20">
+                <div>
+                    <h3 class="font-spartan text-4xl font-black uppercase mb-10">Technical <br>Superiority.</h3>
+                    <div class="space-y-8">
+                        <div class="border-l-2 border-blue-600 pl-8">
+                            <h5 class="font-bold text-xs uppercase mb-2 tracking-widest text-blue-500">UV Stability</h5>
+                            <p class="text-[11px] text-zinc-400 uppercase leading-loose">We use HALS (Hindered Amine Light Stabilizers) which prevents the resin from turning yellow.</p>
+                        </div>
+                        <div class="border-l-2 border-pink-600 pl-8">
+                            <h5 class="font-bold text-xs uppercase mb-2 tracking-widest text-pink-500">Food Safe Certified</h5>
+                            <p class="text-[11px] text-zinc-400 uppercase leading-loose">Our resin is FDA compliant, safe to serve food on our trays and cutting boards.</p>
+                        </div>
+                        <div class="border-l-2 border-purple-600 pl-8">
+                            <h5 class="font-bold text-xs uppercase mb-2 tracking-widest text-purple-500">Zero VOC</h5>
+                            <p class="text-[11px] text-zinc-400 uppercase leading-loose">Our process is eco-friendly and odorless, ensuring no toxic fumes are released.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-panel p-12 space-y-8">
+                    <h4 class="font-black text-xs uppercase tracking-[0.5em] text-zinc-500">Care Instructions</h4>
+                    <ul class="space-y-6 text-[10px] font-bold uppercase tracking-widest">
+                        <li class="flex justify-between border-b border-white/5 pb-4">
+                            <span>Cleaning</span>
+                            <span class="text-blue-500">Soft Microfiber Only</span>
+                        </li>
+                        <li class="flex justify-between border-b border-white/5 pb-4">
+                            <span>Direct Heat</span>
+                            <span class="text-blue-500">Avoid above 90°C</span>
+                        </li>
+                        <li class="flex justify-between border-b border-white/5 pb-4">
+                            <span>Chemicals</span>
+                            <span class="text-blue-500">No Alcohol/Bleach</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Finish Refresh</span>
+                            <span class="text-blue-500">Buff every 2 years</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding text-center space-y-16">
+            <div class="space-y-4">
+                <h3 class="font-playfair italic text-5xl md:text-7xl">Ready for a custom creation?</h3>
+                <p class="text-zinc-600 text-[10px] uppercase tracking-[1em]">Unique • Durable • Breathtaking</p>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center gap-8">
+                <a href="hire-us.html" class="bg-blue-600 px-16 py-6 rounded-full font-black text-[10px] tracking-widest uppercase hover:bg-white hover:text-black transition duration-500">Start Your Project</a>
+                <a href="https://wa.me/94752275176" class="border border-white/10 px-16 py-6 rounded-full font-black text-[10px] tracking-widest uppercase hover:bg-blue-600 transition duration-500">Talk to Artist</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-20 border-t border-white/5 text-center">
+        <img src="https://storage.googleapis.com/gweb-unison-all-projects-and-assets/pwa_image_6f95c1a851cc11ef8469d12d99d1461b.png" alt="Logo" class="h-8 mx-auto mb-10 opacity-30">
+        <p class="text-zinc-800 text-[9px] font-black tracking-[0.8em] uppercase">Premium Resin Studio • Thushara Arts (Pvt) Ltd</p>
+    </footer>
+
+    <div id="infoModal" class="modal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="grid md:grid-cols-2">
+                <div class="h-64 md:h-full overflow-hidden bg-zinc-900">
+                    <img id="modalImg" src="" class="w-full h-full object-cover">
+                </div>
+                <div class="p-10 md:p-16 space-y-6">
+                    <button onclick="closeModal()" class="text-[10px] font-black tracking-widest uppercase text-zinc-500 hover:text-white mb-4">CLOSE ✕</button>
+                    <h2 id="modalTitle" class="font-spartan text-4xl font-black uppercase leading-tight"></h2>
+                    <p id="modalDesc" class="text-zinc-400 text-sm leading-relaxed uppercase tracking-wide"></p>
+                    <div class="pt-6">
+                        <a href="https://wa.me/94752275176" class="bg-blue-600 px-8 py-4 rounded-full font-black text-[10px] tracking-widest uppercase inline-block">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const projectDetails = {
+            main_bouquet: {
+                title: "Eternal Florals",
+                desc: "අපගේ විශේෂිත Resin තාක්ෂණය මගින් ඔබේ ජීවිතයේ වටිනාම දිනයේ මල් කළඹ සදාකාලිකව සංරක්ෂණය කරනු ලැබේ. We preserve every petal's color and form.",
+                img: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=1000"
+            },
+            deep_casting: {
+                title: "Deep Casting",
+                desc: "ගැඹුරු කැස්ටිං තාක්ෂණය මගින් මල් වල ස්වභාවික ත්‍රිමාණ පෙනුම ආරක්ෂා කරන අතරතුර එය සදාකාලිකව සංරක්ෂණය කරනු ලැබේ.",
+                img: "https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?q=80&w=800"
+            },
+            floral_jewelry: {
+                title: "Floral Jewelry",
+                desc: "මල් වල කුඩා කොටස් සහ පෙති ඇතුළත් කර නිර්මාණය කරන ඉතා සැහැල්ලු සහ අලංකාර රෙසින් ආභරණ.",
+                img: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=800"
+            },
+            river_tables: {
+                title: "River Tables",
+                desc: "තාත්වික ගංගාවක පෙනුම සහ ස්වභාවික දැව රටා එක්කර නිර්මාණය කරන අති නවීන ගෘහ භාණ්ඩ.",
+                img: "https://images.unsplash.com/photo-1581428982868-e410dd047a90?q=80&w=800"
+            },
+            clocks: {
+                title: "Geode Clocks",
+                desc: "නිවසේ හෝ කාර්යාලයේ බිත්තියට සුඛෝපභෝගී පෙනුමක් ලබා දෙන මැණික් ගල් රටා සහිත රෙසින් ඔරලෝසු.",
+                img: "https://images.unsplash.com/photo-1590736962236-4074f767858c?q=80&w=800"
+            },
+            ocean: {
+                title: "Ocean Pour Art",
+                desc: "මනරම් මුහුදු රළ රටා සහ වෙරළ තීරයක අලංකාරය ඔබේ නිවසටම ගෙන ඒමට මෙම නිර්මාණ සමත් වේ.",
+                img: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=800"
+            },
+            trays: {
+                title: "Luxury Trays",
+                desc: "අලංකාර රෙසින් මෝස්තර සහිත වූ ආහාර සහ පාන පිළිගැන්වීමට භාවිතා කළ හැකි Food-Safe Trays.",
+                img: "https://images.unsplash.com/photo-1610433554304-7ec394cc1393?q=80&w=800"
+            },
+            pyramids: {
+                title: "Resin Pyramids",
+                desc: "ධනාත්මක ශක්තිය සහ අලංකාරය එක් කරන පිරමිඩ හැඩැති නිර්මාණ.",
+                img: "https://images.unsplash.com/photo-1635345716135-cc0a06654a93?q=80&w=800"
+            },
+            mirrors: {
+                title: "Art Mirrors",
+                desc: "කැඩපත් වලට නවීන පෙනුමක් ලබා දෙන රෙසින් කලා නිර්මාණ.",
+                img: "https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=800"
+            },
+            cases: {
+                title: "Custom Phone Cases",
+                desc: "ඔබට අවශ්‍ය ලෙස සකසා ගත හැකි, අලංකාර මල් හෝ වර්ණ ඇතුළත් කළ ෆෝන් කවර.",
+                img: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?q=80&w=800"
+            },
+            letters: {
+                title: "Monogram Sets",
+                desc: "නමක අකුරු හෝ ලාංඡන රෙසින් මගින් ත්‍රිමාණව නිර්මාණය කරගැනීමට.",
+                img: "https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?q=80&w=800"
+            },
+            keytags: {
+                title: "Key Tags",
+                desc: "ඔබේ ආදරණීයයන්ට තෑගි දීමට හෝ ඔබගේ පෞද්ගලික භාවිතය සඳහා රිසිකම් පරිදි සකස් කළ හැකි අලංකාර යතුරු රඳවනයන්.",
+                img: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=800"
+            }
+        };
+
+        function openModal(key) {
+            const data = projectDetails[key];
+            document.getElementById('modalTitle').innerText = data.title;
+            document.getElementById('modalDesc').innerText = data.desc;
+            document.getElementById('modalImg').src = data.img;
+            document.getElementById('infoModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('infoModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
